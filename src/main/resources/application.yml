@@ -1,0 +1,13 @@
+spring:
+  application:
+      name: nacos-sentinel-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:9000
+      eager: true
+server:
+  port: 8888
