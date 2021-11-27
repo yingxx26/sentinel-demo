@@ -14,6 +14,7 @@ public class TestController {
     @GetMapping("/hello")
     @SentinelResource(value = "hello")
     public String hello() {
+
         return "hello world";
     }
 
