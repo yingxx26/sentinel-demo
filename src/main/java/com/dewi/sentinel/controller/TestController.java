@@ -1,6 +1,7 @@
 package com.dewi.sentinel.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,16 @@ public class TestController {
     AtomicInteger a =new  AtomicInteger();
 
     @GetMapping("/hello")
-    @SentinelResource(value = "hello")
+    @SentinelResource(value = "hello",blockHandler = "blockHandlerMethod")
     public String hello() {
 
         return "hello world";
+    }
+
+
+    public String blockHandlerMethod(BlockException e){
+
+        return "xianliu";
     }
 
     @GetMapping("/hello1")

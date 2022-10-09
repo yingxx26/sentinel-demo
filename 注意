@@ -3,7 +3,7 @@
 2，双击bin/startup.cmd
 3，访问http://localhost:8001/nacos
    用户名febs密码123456
-二,sentinel启动
+二,sentinel管理页面启动
 1，进入命令行 执行 java -jar sentinel-dashboard-1.8.0.jar
 
 2，网页访问 http://localhost:8080
