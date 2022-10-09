@@ -20,7 +20,7 @@ public class SentinelApplication {
     }
 
     private static void initFlowRules() {
-        List<FlowRule> rules = new ArrayList<>();
+        /*List<FlowRule> rules = new ArrayList<>();
 
         FlowRule rule = new FlowRule();
         rule.setResource("hello");
@@ -34,6 +34,6 @@ public class SentinelApplication {
         rule.setCount(1);
         rules.add(rule);
 
-        FlowRuleManager.loadRules(rules);
+        FlowRuleManager.loadRules(rules);*/
     }
 }
