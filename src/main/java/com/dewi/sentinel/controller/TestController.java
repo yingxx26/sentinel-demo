@@ -19,14 +19,25 @@ public class TestController {
     AtomicInteger a = new AtomicInteger();
 
     @GetMapping("/hello")
+    @SentinelResource(value = "hello")//
+    public String hello() {
+        a.getAndIncrement();
+        if (a.get() % 2 == 0) {
+            throw new HzfcException("业务抛出HzfcException异常");
+        }
+
+        return "hello world";
+    }
+    /*@GetMapping("/hello")
     @SentinelResource(value = "hello", blockHandler = "blockHandlerMethod", fallback = "fallbackMethod")//
     public String hello() {
         a.getAndIncrement();
         if (a.get() % 2 == 0) {
             throw new HzfcException("业务抛出HzfcException异常");
         }
+
         return "hello world";
-    }
+    }*/
 
 
     public String blockHandlerMethod(BlockException e) {
